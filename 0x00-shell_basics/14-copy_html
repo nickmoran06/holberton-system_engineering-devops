@@ -1,1 +1,1 @@
-cp -a .html* /./. /../ 
+cp -an .html* ./. .. 
