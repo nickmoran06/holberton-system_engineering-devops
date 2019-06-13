@@ -1,2 +1,2 @@
 #!/bin/bash
-find -d chmod 111
+chmod a+x ./
