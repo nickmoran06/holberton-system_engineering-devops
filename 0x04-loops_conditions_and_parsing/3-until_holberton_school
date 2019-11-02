@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# displays Holberton School 10 times
+
+STRING="Holberton School"
+COUNTER=9
+
+until [ $COUNTER -lt "0" ]
+do
+    echo "$STRING"
+    (( COUNTER-- ))
+done
