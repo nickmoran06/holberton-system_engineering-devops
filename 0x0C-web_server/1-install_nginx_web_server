@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
 # Install nginx web server
 
-sudo apt-get -y upgrade
-sudo apt-get -y update
+sudo apt-get update
 sudo apt-get -y install nginx
 # To return a page that contains the string Holberton School
-echo "Holberton School" | sudo tee /var/www/html/index.html
+echo "Holberton School" > /var/www/html/index.html
 # To take account the changes
 sudo service nginx restart
