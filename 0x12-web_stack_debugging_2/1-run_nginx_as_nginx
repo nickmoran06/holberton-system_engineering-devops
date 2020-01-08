@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Changing the default user of a server that have nginx
+sudo pkill apache2
+chmod 600 /etc/nginx/nginx.conf
+sed -i 's/80 default_server/8080 default_server/' /etc/nginx/sites-available/default
+sudo -u nginx service nginx restart
