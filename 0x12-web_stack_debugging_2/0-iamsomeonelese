@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# run whoami commmand passing another user to display that you are using that user
+sudo -u "$1" whoami
