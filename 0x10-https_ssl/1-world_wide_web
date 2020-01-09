@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Configure your domain zone
+
+func_display_subdomain ()
+{
+	domain = "$1"
+	if [-z "$2"];
+	then
+		subdomain = "www lb-01 web-01 web-02"
+	else
+		subdomain="$2"
+	fi
+
+	for sub in $subdomain;
+	do
+		echo -n "The subdomain $sub "
+		dig $sub.$domain | grep -A1 "ANSWER SECTION:" | tail -n 1 | awk '{print "is a "$4" record and points to "$5}'
+	done
+}
+
+func_display_subdomain "$1" "$2"
