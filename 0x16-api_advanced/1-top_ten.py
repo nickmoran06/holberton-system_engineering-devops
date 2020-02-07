@@ -14,7 +14,7 @@ def top_ten(subreddit):
         if subreddit is None or type(subreddit) is not str:
             print(None)
 
-        url = "https://www.reddit.com/r/{}/hot.json?limit=10".format(subreddit)
+        url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
         request = requests.get(url, headers={"User-agent": "Nicolás"},
                                allow_redirects=False)
 
@@ -23,9 +23,11 @@ def top_ten(subreddit):
 
         data = request.json().get("data")
         children = data.get("children")
-
+        counter = 0
         for counter in children:
             print(counter.get("data").get("title"))
-
+            counter += 1
+            if (counter == 10):
+                break
     except Exception as err:
         print(None)
