@@ -3,7 +3,7 @@
 Module using the Reddit API
 """
 import requests
-from sys import argv
+
 
 def top_ten(subreddit):
     """
