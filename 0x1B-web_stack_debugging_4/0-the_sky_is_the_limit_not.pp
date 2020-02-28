@@ -1,7 +1,6 @@
 # Increases the open file limit in default file of nginx
 
-exec {'fx-limit':
+exec {'open_limit':
   provider => shell,
-  command  => 'sudo sed -i "s/ULIMIT=\"-n 15\"/ULIMIT=\"-n 4096\"/i" /etc/default/nginx'; sudo service nginx restart,
-  before   => Exec['res'],
+  command  => 'sudo sed -i 's/15/4096' /etc/default/nginx'; sudo service nginx restart,
 }
